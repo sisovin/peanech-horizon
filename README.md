@@ -1,7 +1,3 @@
-Here’s a comprehensive README for "Peanech Horizon" based on your detailed documentation. This version blends your feature breakdown with common open-source README best practices.
-
----
-
 # 🏨 Peanech Horizon: Online Hotel Room Booking Management System
 
 **Built with React JSX, MySQL, and a Cyberpunk-Inspired UI**
