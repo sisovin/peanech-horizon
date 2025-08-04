@@ -43,7 +43,11 @@ import {
   Phone,
   Mail,
   MapPin,
+  CreditCard,
 } from "lucide-react";
+
+import WebsiteCustomization from "./WebsiteCustomization";
+import PaymentIntegration from "./PaymentIntegration";
 
 interface WebsiteCustomizationProps {
   className?: string;
@@ -232,7 +236,7 @@ const WebsiteCustomization = ({
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-5 bg-gray-900/50 border border-gray-800">
+        <TabsList className="grid w-full grid-cols-6 bg-gray-900/50 border border-gray-800">
           <TabsTrigger
             value="homepage"
             className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#31e6ed] data-[state=active]:to-[#9d4edd] data-[state=active]:text-white"
@@ -260,6 +264,13 @@ const WebsiteCustomization = ({
           >
             <MessageSquare className="w-4 h-4 mr-2" />
             Messages
+          </TabsTrigger>
+          <TabsTrigger
+            value="payments"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#31e6ed] data-[state=active]:to-[#9d4edd] data-[state=active]:text-white"
+          >
+            <CreditCard className="w-4 h-4 mr-2" />
+            Payments
           </TabsTrigger>
           <TabsTrigger
             value="settings"
@@ -545,6 +556,11 @@ const WebsiteCustomization = ({
               </div>
             </CardContent>
           </Card>
+        </TabsContent>
+
+        {/* Payments Tab */}
+        <TabsContent value="payments" className="space-y-6">
+          <PaymentIntegration />
         </TabsContent>
 
         {/* Settings */}
