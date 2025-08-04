@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm";
 import ResultsGrid from "./ResultsGrid";
 import BookingReports from "./BookingReports";
 import BookingCalendar from "./BookingCalendar";
+import WebsiteCustomization from "./WebsiteCustomization";
 
 const Home = () => {
   const [searchPerformed, setSearchPerformed] = React.useState(false);
@@ -127,6 +128,7 @@ const Home = () => {
               { id: "search", label: "Search & Book" },
               { id: "reports", label: "Reports" },
               { id: "calendar", label: "Calendar" },
+              { id: "customize", label: "Customize" },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -270,6 +272,17 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           >
             <BookingCalendar />
+          </motion.div>
+        )}
+
+        {/* Customize Tab */}
+        {activeTab === "customize" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <WebsiteCustomization />
           </motion.div>
         )}
       </div>
